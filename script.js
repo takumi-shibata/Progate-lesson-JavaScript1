@@ -120,13 +120,130 @@ console.log(`今は${age}歳です`);
 // →今は14歳です
 
 
+//　11.if文
+const level = 12;
+if (level > 10) {
+  console.log("レベルが10より大きいです"); 
+  // 条件に合う場合出力される。
+  // if (level < 10) この場合は、levelの方が大きく条件として正しくないため出力されない。
+}
+// →レベルが10より大きいです
 
 
+// 12.真偽値/比較演算(1)
+const age = 24;
+// 「age >= 20」を出力してください
+console.log(age >= 20);
+// →true
+
+// 「age < 20」を出力してください
+console.log(age < 20);
+// →false
+
+// ageの値が20以上の場合に、「私は20歳以上です」と出力してください
+if (age >= 20) {
+  console.log("私は20歳以上です");
+}
+// →私は20歳以上です
 
 
+// 13.真偽値/比較演算(2)
+const password = "ninjawanko";
+// passwordの値が"ninjawanko"の場合、「ログインに成功しました」と出力してください
+if (password === "ninjawanko") { 
+  //　a === b　(aとbが等しい。一致する)
+  console.log("ログインに成功しました");　
+}
+// →ログインに成功しました
+
+// passwordの値が"ninjawanko"でない場合、「パスワードが間違っています」と出力してください
+if (password !== "ninjawanko") { 
+  //　a !== b　(aとbが異なる)
+  console.log("パスワードが間違っています");
+}
+// →falseのため出力されない
 
 
+// 14.else
+const age = 17;
+// ifの条件式が成り立たない場合に「私は20歳未満です」と出力してください
+if (age >= 20) {
+  console.log("私は20歳以上です"); 
+  // →ageは20より大きくも等しくもないためfalse。条件として成り立たないため出力されない。
+} else {
+  console.log("私は20歳未満です");
+  // →ifの条件に該当しない場合はelseが出力される
+}
+// →私は20歳未満です
 
 
+// 15.else if
+const age = 17;
+// ageの値が10以上20未満のとき、「私は20歳未満ですが、10歳以上です」と出力してください
+if (age >= 20) {
+  console.log("私は20歳以上です");
+  // →ifの条件はfalseのため出力されない。
+} else if (age >= 10) {
+  console.log("私は20歳未満ですが、10歳以上です");
+  // →else ifは条件に成り立たつため出力される。
+} else {
+  console.log("私は10歳未満です");
+  // →if文/else if文の両方の条件がfalseの時はelseが出力される。
+}
+// →私は20歳未満ですが、10歳以上です
 
 
+// 16.複数の条件式
+const age = 24;
+// 「定数ageの値が20以上かつ30未満」という条件のif文を作成してください。
+if (age >= 20 && age < 30) {
+　// かつ「&&」 複数の条件が全て複数ならtrue(出力される)
+　// または「||」複数の条件のうち１つでもtrueなら出力される)
+  console.log("私は20代です"); 
+}
+// →私は20代です
+
+
+// 17.switch文(1)
+// 値によって処理を分岐する場合にswitch文を用いることができる
+const rank = 2; 
+switch (rank) {
+  case 1: // ←「：」つけ忘れ注意！
+    console.log("金メダルです！");
+    break; // ←「break;」をしっかり記述すること！
+
+  // rankの値が2のcaseを追加してください
+  case 2:
+    console.log("銀メダルです！");
+    break;
+  
+  // rankの値が3のcaseを追加してください
+  case 3:
+    console.log("銅メダルです！");
+    break;  
+}
+// →銀メダルです！
+
+
+// 18.switch文(2)
+const rank = 5;
+switch (rank) {
+  case 1:
+    console.log("金メダルです！");
+    break;
+
+  case 2:
+    console.log("銀メダルです！");
+    break;
+
+  case 3:
+    console.log("銅メダルです！");
+    break;
+
+  // defaultの処理を追加してください
+  // 定数の値に該当するcaseがない場合の出力処理
+  default : // ←「：」つけ忘れ注意！
+    console.log("メダルはありません");
+    break;
+}
+// →メダルはありません
